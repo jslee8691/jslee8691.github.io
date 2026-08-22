@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>More — Jong Seung Lee</title>
+<meta name="description" content="Beyond the lab: Jong Seung Lee (JS Lee) on music, art, and life outside research. Contact and links.">
+<meta name="author" content="Jong Seung Lee">
+<meta name="keywords" content="Jong Seung Lee, JS Lee, contact, music, art">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="More — Jong Seung Lee">
+<meta property="og:description" content="Beyond the lab, and how to get in touch.">
+<meta property="og:image" content="https://jongseunglee.com/images/jslee-headshot.jpg">
+<meta property="og:url" content="https://jongseunglee.com/more.html">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bone:#F6F4EE;
+    --bone-2:#EDE8DC;
+    --ink:#1C2B24;
+    --ink-soft:#41524A;
+    --sage:#7C9885;
+    --slate:#3E6259;
+    --teal-glow:#5FB8A4;
+    --line: rgba(28,43,36,0.12);
+    --max-w: 1180px;
+
+    --font-display: 'Fraunces', serif;
+    --font-body: 'IBM Plex Sans', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  h1, h2, h3{
+    font-variation-settings: "SOFT" 0, "WONK" 0;
+    font-variant-ligatures: none;
+    font-feature-settings: "liga" 0, "dlig" 0, "hlig" 0, "calt" 0;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:var(--bone);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+
+  a{ color:inherit; }
+
+  ::selection{ background:var(--teal-glow); color:var(--bone); }
+
+  :focus-visible{
+    outline: 2px solid var(--slate);
+    outline-offset: 3px;
+  }
+
+  .wrap{
+    max-width:var(--max-w);
+    margin:0 auto;
+    padding:0 40px;
+  }
+
+  @media (max-width:640px){
+    .wrap{ padding:0 22px; }
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:100;
+    background:rgba(246,244,238,0.82);
+    backdrop-filter: blur(10px);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s ease;
+  }
+  nav.scrolled{ border-bottom-color:var(--line); }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:64px;
+  }
+  .nav-name{
+    font-family:var(--font-body);
+    font-weight:600;
+    font-size:15.5px;
+    letter-spacing:-0.01em;
+    text-decoration:none;
+    color:var(--ink);
+  }
+  .nav-links{
+    display:flex; gap:28px; list-style:none; margin:0; padding:0;
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    letter-spacing:.04em;
+  }
+  .nav-links a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    position:relative;
+    padding-bottom:3px;
+  }
+  .nav-links a::after{
+    content:'';
+    position:absolute; left:0; right:0; bottom:0;
+    height:1px; background:var(--slate);
+    transform:scaleX(0); transform-origin:left;
+    transition:transform .25s ease;
+  }
+  .nav-links a:hover::after{ transform:scaleX(1); }
+  .nav-links a.active{ font-weight:600; color:var(--ink); }
+  .nav-links a.active::after{ transform:scaleX(1); }
+  @media (max-width:720px){ .nav-links{ display:none; } }
+
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--slate);
+    margin:0 0 22px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow .dot{
+    width:6px; height:6px; border-radius:50%;
+    background:var(--teal-glow);
+    box-shadow:0 0 0 4px rgba(95,184,164,0.18);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{ opacity:1; }
+    50%{ opacity:.4; }
+  }
+
+  /* ---------- SECTION SHARED ---------- */
+  section{ padding:104px 0; position:relative; }
+  @media (max-width:640px){ section{ padding:72px 0; } }
+
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:24px;
+    margin-bottom:52px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:24px;
+  }
+  .section-head h2{
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:clamp(26px,3.2vw,38px);
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+
+  /* ---------- BEYOND ---------- */
+  .tag-row{
+    display:flex; flex-wrap:wrap; gap:10px;
+  }
+  .tag{
+    font-family:var(--font-mono);
+    font-size:12px;
+    letter-spacing:.03em;
+    padding:7px 14px;
+    border-radius:100px;
+    border:1px solid var(--line);
+    color:var(--ink-soft);
+  }
+  .beyond-note{
+    margin-top:20px;
+    font-size:15px;
+    color:var(--ink-soft);
+    font-weight:300;
+    font-style:italic;
+  }
+
+  /* ---------- CONNECT ---------- */
+  .connect{
+    background:var(--ink);
+    color:var(--bone);
+    text-align:center;
+  }
+  .connect .eyebrow{ color:var(--teal-glow); justify-content:center; }
+  .connect h2{
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:clamp(28px,4vw,44px);
+    margin:0 0 20px;
+    letter-spacing:-0.01em;
+  }
+  .connect p{
+    color:rgba(246,244,238,0.7);
+    max-width:50ch;
+    margin:0 auto 40px;
+    font-weight:300;
+    font-size:16px;
+  }
+  .connect-links{
+    display:flex; justify-content:center; gap:16px; flex-wrap:wrap;
+    font-family:var(--font-mono);
+    font-size:13px;
+  }
+  .connect-links a{
+    padding:13px 24px;
+    border-radius:100px;
+    border:1px solid rgba(246,244,238,0.22);
+    text-decoration:none;
+    transition:all .2s ease;
+  }
+  .connect-links a:hover{
+    border-color:var(--teal-glow);
+    background:rgba(95,184,164,0.1);
+  }
+
+  footer{
+    padding:32px 0;
+    text-align:center;
+    font-family:var(--font-mono);
+    font-size:11.5px;
+    color:var(--ink-soft);
+  }
+
+  /* scroll reveal */
+  .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .reveal.is-visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; transition:none !important; }
+    .reveal{ opacity:1; transform:none; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-name">Jong Seung Lee</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="more.html" class="active">More</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- BEYOND -->
+<section id="beyond" style="padding-top:132px;">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Beyond the lab</h2>
+    </div>
+    <div class="tag-row reveal">
+      <span class="tag">Music</span>
+      <span class="tag">BJJ</span>
+      <span class="tag">Vocal</span>
+      <span class="tag">Art</span>
+    </div>
+    <p class="beyond-note reveal">Coming soon!</p>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section class="connect" id="connect">
+  <div class="wrap">
+    <p class="eyebrow"><span class="dot"></span>Open to conversations</p>
+    <h2>Let's talk about what's next.</h2>
+    <p>Whether it's a role, a collaboration, or just a shared interest in where biology and machines meet — I'd like to hear from you.</p>
+    <div class="connect-links">
+      <a href="mailto:iloveyou@mit.edu">Email ↗</a>
+      <a href="https://scholar.google.com/citations?user=7OzfzqsAAAAJ&hl=ko&oi=ao" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
+      <a href="https://www.linkedin.com/in/jslee8691/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      <a href="files/Jong-Seung-Lee-CV.pdf" target="_blank" rel="noopener noreferrer">CV (PDF) ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Jong Seung Lee · Cambridge, MA
+</footer>
+
+<script>
+// nav border on scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 12);
+});
+
+// scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('is-visible');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>

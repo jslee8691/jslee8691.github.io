@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Jong Seung Lee</title>
+<meta name="description" content="About Jong Seung Lee (JS Lee), Research Scientist at MIT Mechanical Engineering / Koch Institute. Publications, patents, and citation record.">
+<meta name="author" content="Jong Seung Lee">
+<meta name="keywords" content="Jong Seung Lee, JS Lee, MIT, Koch Institute, publications, patents, stem cell engineering, tissue engineering">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="About — Jong Seung Lee">
+<meta property="og:description" content="Publications, patents, and citation record.">
+<meta property="og:image" content="https://jongseunglee.com/images/jslee-headshot.jpg">
+<meta property="og:url" content="https://jongseunglee.com/about.html">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bone:#F6F4EE;
+    --bone-2:#EDE8DC;
+    --ink:#1C2B24;
+    --ink-soft:#41524A;
+    --sage:#7C9885;
+    --slate:#3E6259;
+    --teal-glow:#5FB8A4;
+    --line: rgba(28,43,36,0.12);
+    --max-w: 1180px;
+
+    --font-display: 'Fraunces', serif;
+    --font-body: 'IBM Plex Sans', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  h1, h2, h3{
+    font-variation-settings: "SOFT" 0, "WONK" 0;
+    font-variant-ligatures: none;
+    font-feature-settings: "liga" 0, "dlig" 0, "hlig" 0, "calt" 0;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:var(--bone);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+
+  a{ color:inherit; }
+
+  ::selection{ background:var(--teal-glow); color:var(--bone); }
+
+  :focus-visible{
+    outline: 2px solid var(--slate);
+    outline-offset: 3px;
+  }
+
+  .wrap{
+    max-width:var(--max-w);
+    margin:0 auto;
+    padding:0 40px;
+  }
+
+  @media (max-width:640px){
+    .wrap{ padding:0 22px; }
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:100;
+    background:rgba(246,244,238,0.82);
+    backdrop-filter: blur(10px);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s ease;
+  }
+  nav.scrolled{ border-bottom-color:var(--line); }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:64px;
+  }
+  .nav-name{
+    font-family:var(--font-body);
+    font-weight:600;
+    font-size:15.5px;
+    letter-spacing:-0.01em;
+    text-decoration:none;
+    color:var(--ink);
+  }
+  .nav-links{
+    display:flex; gap:28px; list-style:none; margin:0; padding:0;
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    letter-spacing:.04em;
+  }
+  .nav-links a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    position:relative;
+    padding-bottom:3px;
+  }
+  .nav-links a::after{
+    content:'';
+    position:absolute; left:0; right:0; bottom:0;
+    height:1px; background:var(--slate);
+    transform:scaleX(0); transform-origin:left;
+    transition:transform .25s ease;
+  }
+  .nav-links a:hover::after{ transform:scaleX(1); }
+  .nav-links a.active{ font-weight:600; color:var(--ink); }
+  .nav-links a.active::after{ transform:scaleX(1); }
+  @media (max-width:720px){ .nav-links{ display:none; } }
+
+  /* ---------- SECTION SHARED ---------- */
+  section{ padding:104px 0; position:relative; }
+  @media (max-width:640px){ section{ padding:72px 0; } }
+
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:24px;
+    margin-bottom:52px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:24px;
+  }
+  .section-head h2{
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:clamp(26px,3.2vw,38px);
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+
+  /* ---------- SUMMARY (CV page top: merged Now + Impact essentials, editorial style) ---------- */
+  .summary{ background:var(--bone-2); }
+  .summary-editorial{
+    display:grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap:40px;
+    align-items:start;
+    max-width:640px;
+    margin:0 auto;
+  }
+  @media (max-width:600px){
+    .summary-editorial{ grid-template-columns:1fr; gap:28px; }
+  }
+  .summary-mark{ padding-top:6px; text-align:center; }
+  .summary-mit{
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:clamp(44px,7vw,64px);
+    line-height:0.95;
+    margin:0;
+    color:var(--ink);
+  }
+  .summary-role-line{
+    font-size:13px;
+    color:var(--ink-soft);
+    font-weight:300;
+    margin:4px 0 0;
+  }
+  .summary-cluster{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:26px 22px;
+  }
+  .summary-num{
+    font-family:var(--font-mono);
+    font-size:26px;
+    color:var(--slate);
+    display:block;
+  }
+  .summary-num.teal{ color:var(--teal-glow); }
+  .summary-label{
+    font-size:12px;
+    color:var(--ink-soft);
+    display:block;
+    margin-top:2px;
+  }
+  .summary-scholar-link{
+    grid-column:1/-1;
+    margin-top:4px;
+    font-family:var(--font-mono);
+    font-size:12px;
+  }
+  .summary-scholar-link a{
+    color:var(--slate);
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+  .summary-scholar-link a:hover{ color:var(--ink); }
+
+  /* ---------- CV SECTIONS ---------- */
+  .exp-entry{
+    display:grid;
+    grid-template-columns:170px 1fr;
+    gap:24px;
+    padding:24px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .exp-entry:first-child{ padding-top:0; }
+  .exp-entry:last-child{ border-bottom:none; }
+  @media (max-width:640px){
+    .exp-entry{ grid-template-columns:1fr; gap:6px; }
+  }
+  .exp-date{
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    color:var(--ink-soft);
+    white-space:nowrap;
+  }
+  .exp-role{
+    font-family:var(--font-display);
+    font-size:18px;
+    font-weight:500;
+    margin:0 0 4px;
+  }
+  .exp-org{
+    font-size:14px;
+    color:var(--ink-soft);
+  }
+  .exp-dept{
+    display:block;
+    font-size:13px;
+    margin-top:2px;
+  }
+  .exp-detail-list{
+    list-style:none; margin:12px 0 0; padding:0;
+    display:flex; flex-direction:column; gap:7px;
+  }
+  .exp-detail-list li{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    padding-left:16px;
+    position:relative;
+    line-height:1.55;
+  }
+  .exp-detail-list li::before{
+    content:'';
+    position:absolute; left:0; top:7px;
+    width:5px; height:5px;
+    border-radius:50%;
+    background:var(--sage);
+  }
+  .exp-sub{
+    display:block;
+    font-size:12px;
+    color:var(--ink-soft);
+    opacity:.8;
+    margin-top:2px;
+  }
+
+  .simple-list{
+    list-style:none; margin:0; padding:0;
+    display:flex; flex-direction:column; gap:14px;
+  }
+  .simple-list li{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    padding-left:18px;
+    position:relative;
+  }
+  .simple-list li::before{
+    content:'';
+    position:absolute; left:0; top:8px;
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--sage);
+  }
+  .simple-list .yr{
+    font-family:var(--font-mono);
+    color:var(--slate);
+    margin-right:8px;
+    font-size:13px;
+  }
+
+  .pub-year-head{
+    font-family:var(--font-mono);
+    font-size:13px;
+    color:var(--slate);
+    letter-spacing:.06em;
+    margin:32px 0 12px;
+  }
+  .pub-year-head:first-child{ margin-top:0; }
+  .pub-list{ list-style:none; margin:0; padding:0; }
+  .pub-entry{
+    display:flex; gap:14px;
+    padding:12px 0;
+    border-bottom:1px solid var(--line);
+    font-size:13.5px;
+    color:var(--ink-soft);
+    line-height:1.6;
+    font-weight:300;
+  }
+  .pub-entry:last-child{ border-bottom:none; }
+  .pub-num{
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--sage);
+    flex-shrink:0;
+    width:22px;
+  }
+  .pub-journal{ font-style:italic; color:var(--ink); font-weight:400; }
+
+  footer{
+    padding:32px 0;
+    text-align:center;
+    font-family:var(--font-mono);
+    font-size:11.5px;
+    color:var(--ink-soft);
+  }
+
+  /* scroll reveal */
+  .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .reveal.is-visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; transition:none !important; }
+    .reveal{ opacity:1; transform:none; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-name">Jong Seung Lee</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="more.html">More</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- SUMMARY (merged Now + Impact essentials, no prose, editorial layout) -->
+<section class="summary" id="summary" style="padding-top:132px;">
+  <div class="wrap">
+    <div class="summary-editorial reveal">
+      <div class="summary-mark">
+        <p class="summary-mit">MIT</p>
+        <p class="summary-role-line">Research Scientist</p>
+        <p class="summary-role-line">MechE &middot; Koch Institute</p>
+      </div>
+
+      <div class="summary-cluster">
+        <div>
+          <span class="summary-num">24</span>
+          <span class="summary-label">papers</span>
+        </div>
+        <div>
+          <span class="summary-num">5</span>
+          <span class="summary-label">patents</span>
+        </div>
+        <div>
+          <span class="summary-num teal">1,503</span>
+          <span class="summary-label">citations</span>
+        </div>
+        <div>
+          <span class="summary-num teal">20 / 21</span>
+          <span class="summary-label">h-index / i10</span>
+        </div>
+        <p class="summary-scholar-link"><a href="https://scholar.google.com/citations?user=7OzfzqsAAAAJ&hl=ko&oi=ao" target="_blank" rel="noopener noreferrer">Full record on Google Scholar ↗</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PROFESSIONAL EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Professional experience</h2>
+    </div>
+
+    <div class="exp-entry reveal">
+      <span class="exp-date">2025.9 – present</span>
+      <div>
+        <p class="exp-role">Research Scientist</p>
+        <p class="exp-org">Massachusetts Institute of Technology
+          <span class="exp-dept">Department of Mechanical Engineering (Advisor: Prof. Giovanni Traverso)</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="exp-entry reveal">
+      <span class="exp-date">2021.9 – 2025.8</span>
+      <div>
+        <p class="exp-role">Post-doc</p>
+        <p class="exp-org">Massachusetts Institute of Technology
+          <span class="exp-dept">Department of Mechanical Engineering (Advisor: Prof. Giovanni Traverso)</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="exp-entry reveal">
+      <span class="exp-date">2021.3 – 2021.8</span>
+      <div>
+        <p class="exp-role">Post-doc</p>
+        <p class="exp-org">Yonsei University
+          <span class="exp-dept">Department of Biotechnology (Advisor: Prof. Seung-Woo Cho)</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH EXPERIENCE -->
+<section id="research-experience">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Research experience</h2>
+    </div>
+
+    <div class="exp-entry reveal">
+      <span class="exp-date">2021.3 – present</span>
+      <div>
+        <p class="exp-role">Postdoctoral Associate / Research Scientist</p>
+        <p class="exp-org">Massachusetts Institute of Technology
+          <span class="exp-dept">Cambridge, MA, USA</span>
+        </p>
+        <ul class="exp-detail-list">
+          <li>Development of translational platforms for cell therapy</li>
+          <li>Engineering of biomaterial-based delivery systems</li>
+          <li>Development of AI-powered smart medical devices</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-entry reveal">
+      <span class="exp-date">2014.2 – 2021.2</span>
+      <div>
+        <p class="exp-role">Graduate Research Assistant</p>
+        <p class="exp-org">Stem Cell and Biomaterials Engineering Laboratory (PI: Seung-Woo Cho)
+          <span class="exp-dept">Yonsei University, Seoul, Republic of Korea</span>
+        </p>
+        <ul class="exp-detail-list">
+          <li>Developing biomedical platform to manipulate stem cell and tissue engineering<span class="exp-sub">Intra/extracellular electrical stimulation; photoactivated system; magnetic control</span></li>
+          <li>Organ-on-a-chip system development<span class="exp-sub">Artificial skin with neuronal interface; organoid culture system</span></li>
+          <li>Development of functionalized scaffolds for tissue regeneration<span class="exp-sub">Natural/synthetic polymer; hydrogel</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-entry reveal">
+      <span class="exp-date">2012.8 – 2013.7</span>
+      <div>
+        <p class="exp-role">Undergraduate Researcher</p>
+        <p class="exp-org">Nanobiotech Laboratory (PI: Prof. Hyung-il Jung)
+          <span class="exp-dept">Yonsei University, Seoul, Republic of Korea</span>
+        </p>
+        <ul class="exp-detail-list">
+          <li>Design and control of microneedle fabrication and application</li>
+          <li>Drug delivery using microneedle on the mouse skin</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="summary" id="education">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Education</h2>
+    </div>
+
+    <div class="exp-entry reveal">
+      <span class="exp-date">2014.3 – 2021.2</span>
+      <div>
+        <p class="exp-role">Ph.D. in College of Life Science &amp; Biotechnology</p>
+        <p class="exp-org">Yonsei University</p>
+      </div>
+    </div>
+
+    <div class="exp-entry reveal">
+      <span class="exp-date">2010.3 – 2014.2</span>
+      <div>
+        <p class="exp-role">B.S. in College of Life Science &amp; Biotechnology</p>
+        <p class="exp-org">Yonsei University</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHING EXPERIENCE -->
+<section id="teaching">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Teaching</h2>
+    </div>
+    <ul class="simple-list reveal">
+      <li><span class="yr">2026</span>MIT Professional Development Research Mentoring Program</li>
+      <li><span class="yr">2025</span>MIT Kaufman Teaching Certificate Program</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Publications</h2>
+    </div>
+
+    <p class="pub-year-head reveal">2025</p>
+    <ul class="pub-list reveal">
+      <li class="pub-entry"><span class="pub-num">1.</span><span>Lim D, Park S, <strong>Lee JS</strong>, Gwon HJ, Nam Y, Choi S, Kim J, Kim Y, Park G, Pyun WY, Park HW, Cho SW, Ahn HS. Longitudinal transformation of mitochondrial metabolism during neurogenesis. <span class="pub-journal">PNAS</span> 2025;122(47):e2517961122.</span></li>
+      <li class="pub-entry"><span class="pub-num">2.</span><span>Jeon IY, Jeon YM, Choi JH, Lee S, Kim M, Kim JH, <strong>Lee JS</strong>, Hwang J, Jeong D, Carroll GA, Wentworth A, Yang K, Park S, Raskin KA, Jang WY, Traverso G, Lee JS. In situ printing of biodegradable implant for healing critical-sized bone defect. <span class="pub-journal">Device</span> 2025;3:100873.</span></li>
+      <li class="pub-entry"><span class="pub-num">3.</span><span>Kim J, <strong>Lee JS</strong>, Noh S, Seo E, Lee J, Kim T, Cho SW, Kim G, Kim SS, Park J. Cellular level cryo-neuromodulation using rapid and localized cooling device combined with microelectrode array. <span class="pub-journal">Biosensors and Bioelectronics</span> 2025;277:117257.</span></li>
+    </ul>
+
+    <p class="pub-year-head reveal">2022</p>
+    <ul class="pub-list reveal">
+      <li class="pub-entry"><span class="pub-num">4.</span><span><strong>Lee JS</strong>*, Kim J*, Cui B, Kim SK, Cho SA, An S, Cho SW. Hybrid skin chips for toxicological evaluation of chemical drugs and cosmetic compounds. <span class="pub-journal">Lab on a Chip</span> 2022;22:343-353.</span></li>
+      <li class="pub-entry"><span class="pub-num">5.</span><span>Lee JS, Choi YS, <strong>Lee JS</strong>, Jeon EJ, An S, Lee MS, Yang HS, Cho SW. Mechanically-reinforced and highly adhesive decellularized tissue-derived hydrogel for efficient tissue repair. <span class="pub-journal">Chemical Engineering Journal</span> 2022;427:130926.</span></li>
+    </ul>
+
+    <p class="pub-year-head reveal">2021</p>
+    <ul class="pub-list reveal">
+      <li class="pub-entry"><span class="pub-num">6.</span><span>Kwon J*, <strong>Lee JS</strong>*, Lee J, Na J, Sung J, Lee HJ, Kwak H, Cheong E, Cho SW, Choi HJ. Vertical nanowire electrode array for enhanced neurogenesis of human neural stem cells via intracellular electrical stimulation. <span class="pub-journal">Nano Letters</span> 2021;21:6343-6351.</span></li>
+      <li class="pub-entry"><span class="pub-num">7.</span><span>Kim J, Lee KT, <strong>Lee JS</strong>, Shin J, Cui B, Yang K, Choi YS, Choi N, Lee SH, Lee JH, Bahn YS, Cho SW. Fungal brain infection modelled in a human-neurovascular-unit-on-a-chip with a functional blood-brain barrier. <span class="pub-journal">Nature Biomedical Engineering</span> 2021;5:830-846.</span></li>
+    </ul>
+
+    <p class="pub-year-head reveal">2020</p>
+    <ul class="pub-list reveal">
+      <li class="pub-entry"><span class="pub-num">8.</span><span>Choi S, <strong>Lee JS</strong>, Shin J, Lee MS, Kang D, Hwang NS, Lee H, Yang HS, Cho SW. Osteoconductive hybrid hyaluronic acid hydrogel patch for effective bone formation. <span class="pub-journal">Journal of Controlled Release</span> 2020;327:571-583.</span></li>
+      <li class="pub-entry"><span class="pub-num">9.</span><span>Baek J, Cho Y, Park H-J, Choi G, <strong>Lee JS</strong>, Lee M, Yu SJ, Cho SW, Lee E, Im SG. A surface-tailoring method for rapid non-thermosensitive cell sheet engineering via functional polymer coatings. <span class="pub-journal">Advanced Materials</span> 2020;32(16):1907225.</span></li>
+    </ul>
+
+    <p class="pub-year-head reveal">2019</p>
+    <ul class="pub-list reveal">
+      <li class="pub-entry"><span class="pub-num">10.</span><span>Jin Y, Lee J, Chung E, Yang K, Kim J, Kim JW, <strong>Lee JS</strong>, Cho AN, Oh T, Lee JH, Cho SW, Cheon J. Magnetic control of axon navigation in reprogrammed neurons. <span class="pub-journal">Nano Letters</span> 2019;19(9):6517-6523.</span></li>
+      <li class="pub-entry"><span class="pub-num">11.</span><span>Yang K, <strong>Lee JS</strong>, Han S, Jin Y, Cho AN, Chang GE, Cheong E, Yang JH, Chung S, Cho SW. Endothelial-neurosphere crosstalk in microwell arrays regulates self-renewal and differentiation of human neural stem cells. <span class="pub-journal">Journal of Industrial and Engineering Chemistry</span> 2019;74:148-157.</span></li>
+    </ul>
+
+    <p class="pub-year-head reveal">2018</p>
+    <ul class="pub-list reveal">
+      <li class="pub-entry"><span class="pub-num">12.</span><span>Ko E*, <strong>Lee JS</strong>*, Kim H, Yang SY, Yang D, Yang K, Lee J, Shin J, Yang HS, Ryu WH, Cho SW. Electrospun silk fibroin nanofibrous scaffolds with two-stage hydroxyapatite functionalization for enhancing the osteogenic differentiation of human adipose-derived mesenchymal stem cells. <span class="pub-journal">ACS Applied Materials &amp; Interfaces</span> 2018;10(9):7614-7625.</span></li>
+    </ul>
+
+    <p class="pub-year-head reveal">2017</p>
+    <ul class="pub-list reveal">
+      <li class="pub-entry"><span class="pub-num">13.</span><span>Yang K, Yu SJ, <strong>Lee JS</strong>, Lee HR, Chang GE, Seo J, Lee T, Cheong E, Im SG, Cho SW. Electroconductive nanoscale topography for enhanced neuronal differentiation and electrophysiological maturation of human neural stem cells. <span class="pub-journal">Nanoscale</span> 2017;9:18737-18752.</span></li>
+      <li class="pub-entry"><span class="pub-num">14.</span><span><strong>Lee JS</strong>, Jin Y, Park HJ, Yang K, Lee MS, Yang HS, Cho SW. In situ bone tissue engineering with an endogenous stem cell mobilizer and osteoinductive nanofibrous polymeric scaffold. <span class="pub-journal">Biotechnology Journal</span> 2017;12(12):1700062.</span></li>
+      <li class="pub-entry"><span class="pub-num">15.</span><span>Yang K, Oh JY, <strong>Lee JS</strong>, Jin Y, Chang GE, Chae SS, Cheong E, Baik HK, Cho SW. Photoactive poly(3-hexylthiophene) nanoweb for optoelectrical stimulation to enhance neurogenesis of human stem cells. <span class="pub-journal">Theranostics</span> 2017;7(18):4591-4604.</span></li>
+      <li class="pub-entry"><span class="pub-num">16.</span><span>Lee JS, <strong>Lee JS</strong>, Lee MS, An S, Yang K, Lee K, Yang HS, Lee H, Cho SW. Plant flavonoid-mediated multifunctional surface modification chemistry: catechin coating for enhanced osteogenesis of human stem cells. <span class="pub-journal">Chemistry of Materials</span> 2017;29(10):4375–4384.</span></li>
+      <li class="pub-entry"><span class="pub-num">17.</span><span>Kim J, Yang K, <strong>Lee JS</strong>, Hwang YH, Park HJ, Park KI, Lee DY, Cho SW. Enhanced self-renewal and accelerated differentiation of human fetal neural stem cells using graphene oxide nanoparticles. <span class="pub-journal">Macromolecular Bioscience</span> 2017;17(8):1600540.</span></li>
+    </ul>
+
+    <p class="pub-year-head reveal">2016</p>
+    <ul class="pub-list reveal">
+      <li class="pub-entry"><span class="pub-num">18.</span><span>Kim H, Yang K, Jeong W, Choi S, <strong>Lee JS</strong>, Cho AN, Chang G-E, Cheong E, Cho SW, Lim Y. Photoactivation of noncovalently assembled peptide ligands on carbon nanotubes enables the dynamic regulation of stem cell differentiation. <span class="pub-journal">ACS Applied Materials &amp; Interfaces</span> 2016;8(16):26470-26481.</span></li>
+      <li class="pub-entry"><span class="pub-num">19.</span><span>Shin J, Cho JH, Jin Y, Yang K, <strong>Lee JS</strong>, Park HJ, Han HS, Lee J, Jeon H, Shin H, Cho SW. Mussel adhesion-inspired reverse transfection platform enhances osteogenic differentiation and bone formation of human adipose-derived stem cells. <span class="pub-journal">Small</span> 2016;12(45):6266-6278.</span></li>
+      <li class="pub-entry"><span class="pub-num">20.</span><span>Ko E, Alberti K, <strong>Lee JS</strong>, Yang K, Jin Y, Shin J, Yang HS, Xu Q, Cho SW. Nanostructured tendon-derived scaffolds for enhanced bone regeneration by human adipose-derived stem cells. <span class="pub-journal">ACS Applied Materials &amp; Interfaces</span> 2016;8(35):22819-22829.</span></li>
+      <li class="pub-entry"><span class="pub-num">21.</span><span>Yang K, Lee J, <strong>Lee JS</strong>, Kim D, Chang G-E, Seo J, Cheong E, Lee T, Cho SW. Graphene oxide hierarchical patterns for the derivation of electrophysiologically functional neuron-like cells from human neural stem cells. <span class="pub-journal">ACS Applied Materials &amp; Interfaces</span> 2016;8(28):17763-17774.</span></li>
+    </ul>
+
+    <p class="pub-year-head reveal">2015</p>
+    <ul class="pub-list reveal">
+      <li class="pub-entry"><span class="pub-num">22.</span><span>Yang K, Park E, <strong>Lee JS</strong>, Kim IS, Hong K, Park KI, Cho SW, Yang HS. Biodegradable nanotopography combined with neurotrophic signals enhances contact guidance and neuronal differentiation of human neural stem cells. <span class="pub-journal">Macromolecular Bioscience</span> 2015;15(10):1348-1356.</span></li>
+      <li class="pub-entry"><span class="pub-num">23.</span><span>Yang K, Park HJ, Han S, Lee J, Ko E, Kim J, <strong>Lee JS</strong>, Yu JH, Song KY, Cheong E, Cho SR, Chung S, Cho SW. Recapitulation of in vivo-like paracrine signals of human mesenchymal stem cells for functional neuronal differentiation of human neural stem cells in a 3D microfluidic system. <span class="pub-journal">Biomaterials</span> 2015;63:177-188.</span></li>
+    </ul>
+
+    <p class="pub-year-head reveal">2014</p>
+    <ul class="pub-list reveal">
+      <li class="pub-entry"><span class="pub-num">24.</span><span>Yang K, Jung H, Lee HR, <strong>Lee JS</strong>, Kim SR, Song KY, Cheong E, Bang J, Im SG, Cho SW. Multiscale, hierarchically patterned topography for directing human neural stem cells into functional neurons. <span class="pub-journal">ACS Nano</span> 2014;8(8):7809-7822.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- PATENTS -->
+<section class="summary" id="patents">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Patents</h2>
+    </div>
+    <ul class="pub-list reveal">
+      <li class="pub-entry"><span class="pub-num">1.</span><span>Langer RS, Traverso CG, Lee S, Murphy M, <strong>Lee JS</strong>. A retrievable intravascular implant and related systems and methods (<span class="pub-journal">International Patent Application PCT/US2026/021234</span>, 2026).</span></li>
+      <li class="pub-entry"><span class="pub-num">2.</span><span>Traverso CG, Kang Z, Murphy M, Shalabi N, <strong>Lee JS</strong>, Kim BR, Trainor H. Systems and methods for encapsulation of cells and cell clusters (<span class="pub-journal">International Patent Application PCT/US2026/021229</span>, 2026).</span></li>
+      <li class="pub-entry"><span class="pub-num">3.</span><span>Cho S-A, Kim J, <strong>Lee JS</strong>, Cho SW, An S. Forming apparatus for artificial skin, producing method of artificial skin and artificial skin (<span class="pub-journal">Korean Patent KR102923875B1</span>, 2026).</span></li>
+      <li class="pub-entry"><span class="pub-num">4.</span><span>Yoon YJ, Cheong E, Cho SW, Song MC, Beom JY, Jung JA, <strong>Lee JS</strong>, Lee HJ. Compounds, compositions containing same, and use thereof for promoting hair growth (<span class="pub-journal">US Patent 12011497B2</span>, 2024).</span></li>
+      <li class="pub-entry"><span class="pub-num">5.</span><span>Kim GH, Kim TS, Noh SY, Park JY, Lee JC, Kim JH, Cho SW, <strong>Lee JS</strong>. Cell experiment method, device, and system for measuring signal of cell in conjunction with rapid and precise cooling (<span class="pub-journal">Korean Patent KR102277511B1</span>, 2021).</span></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  © 2026 Jong Seung Lee · Cambridge, MA
+</footer>
+
+<script>
+// nav border on scroll
+const nav = document.getElementById('nav');
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 12);
+  });
+}
+
+// scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+if (revealEls.length) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+}
+</script>
+</body>
+</html>
