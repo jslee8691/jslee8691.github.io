@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research — Jong Seung Lee</title>
+<meta name="description" content="Research vision of Jong Seung Lee (JS Lee): brain-machine interfaces, generative biology & stem cell engineering, virtual biology, and translational medicine.">
+<meta name="author" content="Jong Seung Lee">
+<meta name="keywords" content="Jong Seung Lee, JS Lee, MIT, brain-machine interface, generative biology, stem cell engineering, virtual cell, translational medicine, research vision">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Research — Jong Seung Lee">
+<meta property="og:description" content="Where I want to go: brain-machine interfaces, generative biology & stem cell engineering, virtual biology beyond animal testing, and translational medicine.">
+<meta property="og:image" content="https://jongseunglee.com/images/jslee-headshot.jpg">
+<meta property="og:url" content="https://jongseunglee.com/research.html">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bone:#F6F4EE;
+    --bone-2:#EDE8DC;
+    --ink:#1C2B24;
+    --ink-soft:#41524A;
+    --sage:#7C9885;
+    --slate:#3E6259;
+    --teal-glow:#5FB8A4;
+    --line: rgba(28,43,36,0.12);
+    --max-w: 1180px;
+
+    --font-display: 'Fraunces', serif;
+    --font-body: 'IBM Plex Sans', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  h1, h2, h3{
+    font-variation-settings: "SOFT" 0, "WONK" 0;
+    font-variant-ligatures: none;
+    font-feature-settings: "liga" 0, "dlig" 0, "hlig" 0, "calt" 0;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:var(--bone);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+
+  a{ color:inherit; }
+
+  ::selection{ background:var(--teal-glow); color:var(--bone); }
+
+  :focus-visible{
+    outline: 2px solid var(--slate);
+    outline-offset: 3px;
+  }
+
+  .wrap{
+    max-width:var(--max-w);
+    margin:0 auto;
+    padding:0 40px;
+  }
+
+  @media (max-width:640px){
+    .wrap{ padding:0 22px; }
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:100;
+    background:rgba(246,244,238,0.82);
+    backdrop-filter: blur(10px);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s ease;
+  }
+  nav.scrolled{ border-bottom-color:var(--line); }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:64px;
+  }
+  .nav-name{
+    font-family:var(--font-body);
+    font-weight:600;
+    font-size:15.5px;
+    letter-spacing:-0.01em;
+    text-decoration:none;
+    color:var(--ink);
+  }
+  .nav-links{
+    display:flex; gap:28px; list-style:none; margin:0; padding:0;
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    letter-spacing:.04em;
+  }
+  .nav-links a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    position:relative;
+    padding-bottom:3px;
+  }
+  .nav-links a::after{
+    content:'';
+    position:absolute; left:0; right:0; bottom:0;
+    height:1px; background:var(--slate);
+    transform:scaleX(0); transform-origin:left;
+    transition:transform .25s ease;
+  }
+  .nav-links a:hover::after{ transform:scaleX(1); }
+  .nav-links a.active{ font-weight:600; color:var(--ink); }
+  .nav-links a.active::after{ transform:scaleX(1); }
+  @media (max-width:720px){ .nav-links{ display:none; } }
+
+  /* ---------- SECTION SHARED ---------- */
+  section{ padding:104px 0; position:relative; }
+  @media (max-width:640px){ section{ padding:72px 0; } }
+
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:24px;
+    margin-bottom:52px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:24px;
+  }
+  .section-head h2{
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:clamp(26px,3.2vw,38px);
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+
+  /* ---------- VISION CARDS ---------- */
+  .vision-lede{
+    font-size:17px;
+    color:var(--ink-soft);
+    font-weight:300;
+    margin:-28px 0 48px;
+  }
+  .vision-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:24px;
+    overflow:hidden;
+  }
+  @media (max-width:760px){ .vision-grid{ grid-template-columns:1fr; } }
+
+  .vcard{
+    background:var(--bone);
+    padding:40px 36px;
+    position:relative;
+    transition:background .3s ease;
+  }
+  .vcard:hover{ background:var(--bone-2); }
+  .vcard .vicon{
+    width:44px; height:44px;
+    margin-bottom:22px;
+  }
+  .vcard h3{
+    font-family:var(--font-display);
+    font-size:21px;
+    font-weight:500;
+    margin:0 0 4px;
+  }
+  .vcard .vtag{
+    font-family:var(--font-mono);
+    font-size:11px;
+    letter-spacing:.05em;
+    color:var(--teal-glow);
+    text-transform:uppercase;
+    display:block;
+    margin-bottom:14px;
+  }
+  .vcard p{
+    font-size:15px;
+    color:var(--ink-soft);
+    margin:0;
+    font-weight:300;
+    line-height:1.6;
+  }
+
+  footer{
+    padding:32px 0;
+    text-align:center;
+    font-family:var(--font-mono);
+    font-size:11.5px;
+    color:var(--ink-soft);
+  }
+
+  /* scroll reveal */
+  .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .reveal.is-visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; transition:none !important; }
+    .reveal{ opacity:1; transform:none; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-name">Jong Seung Lee</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="more.html">More</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- RESEARCH INTEREST -->
+<section id="vision" style="padding-top:132px;">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Research interest</h2>
+    </div>
+    <p class="vision-lede reveal">These aren't funded projects, they're the questions pulling me forward. Each one asks a version of the same thing: can we understand a biological system well enough to predict it, protect it, or restore it?</p>
+
+    <div class="vision-grid">
+      <div class="vcard reveal">
+        <svg class="vicon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="14" r="8" stroke="#3E6259" stroke-width="1.6"/><path d="M22 22 L22 34 M14 30 L30 30 M12 38 L18 32 M32 38 L26 32" stroke="#3E6259" stroke-width="1.6" stroke-linecap="round"/><circle cx="22" cy="14" r="2" fill="#5FB8A4"/></svg>
+        <span class="vtag">Neurotechnology</span>
+        <h3>Brain-machine interfaces</h3>
+        <p>Decoding neural signal well enough that a prosthetic or a machine interface can move the way a limb once did — eventually giving mobility back to people who've lost it.</p>
+      </div>
+
+      <div class="vcard reveal">
+        <svg class="vicon" viewBox="0 0 44 44" fill="none"><rect x="8" y="8" width="10" height="10" rx="2" stroke="#3E6259" stroke-width="1.6"/><rect x="26" y="8" width="10" height="10" rx="2" stroke="#3E6259" stroke-width="1.6"/><rect x="8" y="26" width="10" height="10" rx="2" stroke="#3E6259" stroke-width="1.6"/><rect x="26" y="26" width="10" height="10" rx="2" stroke="#5FB8A4" stroke-width="1.6"/><path d="M18 13 H26 M13 18 V26 M31 18 V26 M18 31 H26" stroke="#3E6259" stroke-width="1.2" stroke-dasharray="2 2"/></svg>
+        <span class="vtag">Generative biology</span>
+        <h3>Generative biology &amp; stem cell engineering</h3>
+        <p>What AlphaFold did for protein structure, I want to see done for cellular and stem-cell behavior — predicting how a cell will differentiate, or how tissue will respond immunologically, before it happens in a dish.</p>
+      </div>
+
+      <div class="vcard reveal">
+        <svg class="vicon" viewBox="0 0 44 44" fill="none"><ellipse cx="22" cy="22" rx="16" ry="11" stroke="#3E6259" stroke-width="1.6"/><circle cx="17" cy="20" r="2.5" fill="#5FB8A4"/><circle cx="26" cy="24" r="2" stroke="#3E6259" stroke-width="1.3"/><circle cx="22" cy="16" r="1.6" stroke="#3E6259" stroke-width="1.3"/></svg>
+        <span class="vtag">In-silico systems</span>
+        <h3>Virtual biology beyond animal testing</h3>
+        <p>Building predictive digital models of cells, tissues, and organisms to simulate biological responses in silico, reducing reliance on animal testing and accelerating translation to humans.</p>
+      </div>
+
+      <div class="vcard reveal">
+        <svg class="vicon" viewBox="0 0 44 44" fill="none"><path d="M22 8 C14 8 8 14 8 22 C8 30 14 36 22 36 C30 36 36 30 36 22" stroke="#3E6259" stroke-width="1.6" stroke-linecap="round"/><path d="M22 16v12M16 22h12" stroke="#5FB8A4" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span class="vtag">Translational medicine</span>
+        <h3>Translational &amp; regenerative medicine</h3>
+        <p>Engineering stem cells, biomaterials, and medical devices into therapeutic platforms that actually reach patients — closing the gap between what we discover in a dish and what helps someone in a clinic.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  © 2026 Jong Seung Lee · Cambridge, MA
+</footer>
+
+<script>
+// nav border on scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 12);
+});
+
+// scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('is-visible');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
