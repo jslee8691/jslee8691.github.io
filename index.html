@@ -237,31 +237,25 @@
     .morph .gloss{ white-space:normal; max-width:15vw; text-align:center; }
   }
 
-  /* ---------- SCENE (scroll-linked home -> intro transition) ---------- */
+  /* ---------- SCENE (natural vertical flow: home followed by intro) ---------- */
   .scene{
     position:relative;
-    height:220vh;
   }
   .stage{
-    position:sticky;
-    top:0;
-    height:100vh;
-    overflow:hidden;
+    position:relative;
   }
   .home-layer, .intro-layer{
-    position:absolute;
-    inset:0;
+    position:relative;
+    min-height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
   }
   .home-layer{
     z-index:2;
-    pointer-events:none;
   }
   .intro-layer{
     z-index:1;
-    opacity:0;
   }
   .intro-layer .wrap{ width:100%; }
 
@@ -592,50 +586,17 @@ if (revealEls.length) {
     );
   }
 
-  // scene transition: home (Educator) fades out while intro fades in
+  // natural scene transition: the Educator section scrolls away and the intro follows below
   (function(){
-    const scene = document.getElementById('top');
-    const homeLayer = document.getElementById('homeLayer');
     const introLayer = document.getElementById('introLayer');
-    const morphs = document.querySelectorAll('#etymWord .morph');
-    const meaning = document.getElementById('meaningLine');
     const arrow = document.getElementById('scrollArrow');
-    if (!scene || !homeLayer || !introLayer) return;
+    if (!introLayer) return;
 
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    function sceneTotal(){
-      return scene.offsetHeight - window.innerHeight;
-    }
-
-    function computeProgress(){
-      const total = sceneTotal();
-      if (total <= 0) return 1;
-      const rect = scene.getBoundingClientRect();
-      const p = -rect.top / total;
-      return Math.max(0, Math.min(1, p));
-    }
-
-    function applyProgress(p){
-      morphs.forEach(m => {
-        m.style.opacity = String(Math.max(0, 1 - p * 1.15));
-      });
-      if (meaning) meaning.style.opacity = String(Math.max(0, 1 - p * 1.4));
-      homeLayer.style.opacity = String(Math.max(0, 1 - p * 1.05));
-      if (arrow) arrow.style.opacity = String(Math.max(0, 0.4 * (1 - p * 4)));
-      introLayer.style.opacity = String(Math.min(1, p * 1.15));
-    }
-
-    function onScroll(){ applyProgress(computeProgress()); }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
-    onScroll();
-
     if (arrow) {
       arrow.addEventListener('click', () => {
-        const total = sceneTotal();
-        const sceneTop = window.scrollY + scene.getBoundingClientRect().top;
-        window.scrollTo({ top: sceneTop + total, behavior: reduced ? 'auto' : 'smooth' });
+        introLayer.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
       });
     }
   })();
